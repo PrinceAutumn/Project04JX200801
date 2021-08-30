@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper
+   PUBLIC ?-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mappper.dtd>
+<mapper namespace="com.ckcj.mapper.TblUserMapper">
+        <insert id="addTblUser" parmeterType="com.ckcj.entity.TBluser">
+                insert into tblUser (rid,uname,upwd,money,phone)
+                values(#{rid},#{uname},#{upwd},#{money},#{phone}
+        </insert>
+        <delete id="delTblUser" parmeterType="java.lang.String">
+                delete from tbluser whereuserid=#{uid}
+        </delete>
+        <update id="updateTblUser" parmeterType="java.util.Map">
+                updete tbluser set upwd=#{upwd}
+          <!-- <if test="uname!=null and uname!=''">-->
+          <!--,uname=#{unme}-->
+          <!--,</if>-->
+           where userid=#{userid}
+        </update>
+        <select id="findTbluser" resultType="com.ckcj.entity.Tbluser" parmmeterType="java.lang.String"
+           select*from tblUser where uname like cancat??%?, #{uname},"%")
+        <where>
+        <if test="uname!=null and uname!=''">
+        and uname like concat("%",#{uname},"%")
+        </if>
+        <if test="miny!=null ">
+          &amp;-->&
+          &It; &;
+         and money<![CDATA[>=]]>#{miny}
+        </if>
+        <if test="maxy!=null ">
+         and money<=#{maxy}
+        </if>
+        </where>
+        limit #{pageNo}?#{pageSize}
+        </select>
+        <select id="findTbluserById" resultType="com.ckcj.entity.Tbluser"parameterType="java.util.Map'>
+        <select*from tblUser where uname=#{uname}and upwd=#{upwd}
+        </select>
+        <delete id="deleMTbluser?parameterType=?Java.util.list">
+        delete from tbluser where userid in
+        <foreach collection="list" item="userid"separator=","open="("close=")">
+        #{userid}
+        </delete>
+</mapper>
+
+
+
+
+
+
+
+
+        <foreach collection="list"item="tblUser"separator",">
+        (#{tbluser.rid},#{tblUser.uname},#{tblUser.upword},#{tblusermoney},#tblUser.phone

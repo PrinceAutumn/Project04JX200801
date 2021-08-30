@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configulation
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd>
+        <configulation>
+        <environments defualt="enviroment01">
+        <environments id="enviroment01">
+        <transactionManager type="jDBC"></transactionManager>
+        <dataSource type="POOLED">
+        <property name="driver"value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url"value="jdbc.mysql://localhost:3306/docys?useSSL=ture&amp;useUnicodetrue&characterEncoding=UTF-8&serverTimezone"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+        </dataSource>
+        </enviroment>
+        </enviroments>
+        <!-- 加载SQL-->
+
+        <mappers>
+        <mapper resource="mapper/tblUsermapper.xml"></mapper>
+        <mapper resource="mapper/tblRolemapper.xml"></mapper>
+
+        </mappers>
+        <!-- Invoke 'Generate' action to add tags or functions -->
+
+
+    <!-- Invoke 'Generate' action to add tags or functions -->
+
+</configulation>
